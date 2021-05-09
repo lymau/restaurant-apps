@@ -1,0 +1,84 @@
+.posts {
+  display: grid;
+  grid-row-gap: 16px;
+}
+
+@media screen and (min-width: 700px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 16px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .headline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav__item {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  #drawer {
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-in-out;
+    background-color: #f48b29;
+  }
+
+  #drawer.open {
+    transform: translate(0, 0);
+  }
+
+  #drawer ul {
+    list-style-type: none;
+    padding: 0 16px;
+  }
+
+  #drawer li {
+    padding: 5px 0px;
+    display: block;
+  }
+
+  #drawer a {
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+  }
+
+  #hamburger {
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.2em;
+  }
+}
