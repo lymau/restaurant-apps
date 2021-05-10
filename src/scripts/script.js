@@ -24,7 +24,7 @@ function getAllRestaurants() {
         <img tabindex="0"
           class="post-item__thumbnail"
           src="${restaurant.pictureId}"
-          alt="Gambar ${restaurant.name}"
+          alt="${restaurant.name}"
         />
         <div class="post-item__content">
           <p class="post-item__date">
