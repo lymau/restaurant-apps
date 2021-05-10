@@ -11,10 +11,6 @@
     grid-row-gap: 16px;
   }
 
-  .post-item__title {
-    padding: 0.5em;
-  }
-
   #hamburger {
     display: none;
   }
@@ -46,10 +42,6 @@
     text-align: center;
     line-height: 24px;
     text-transform: uppercase;
-  }
-
-  .post-item__title {
-    padding: 0.5em;
   }
 
   #drawer {
@@ -92,6 +84,7 @@
 }
 
 .tombol {
+  display:  block;
   min-width : 44px;
   min-height: 44px;
 }
