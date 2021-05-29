@@ -17,19 +17,35 @@ const Detail = {
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant.restaurant);
 
+    const btnComment = document.querySelector('#comment');
+    const textName = document.querySelector('#name');
+    const textReview = document.querySelector('#review');
+    const idRestaurant = restaurant.restaurant.id;
+
+    btnComment.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const review = {
+        id: idRestaurant,
+        name: textName.value,
+        review: textReview.value,
+      };
+
+      await RestaurantDbSource.postReview(review);
+    });
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
-        id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description,
-        city: restaurant.city,
-        address: restaurant.address,
-        pictureId: restaurant.pictureId,
-        categories: restaurant.categories,
-        menus: restaurant.menus,
-        rating: restaurant.rating,
-        customerReviews: restaurant.customerReviews,
+        id: restaurant.restaurant.id,
+        name: restaurant.restaurant.name,
+        description: restaurant.restaurant.description,
+        city: restaurant.restaurant.city,
+        address: restaurant.restaurant.address,
+        pictureId: restaurant.restaurant.pictureId,
+        categories: restaurant.restaurant.categories,
+        menus: restaurant.restaurant.menus,
+        rating: restaurant.restaurant.rating,
+        customerReviews: restaurant.restaurant.customerReviews,
       },
     });
   },

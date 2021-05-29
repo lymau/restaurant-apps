@@ -7,15 +7,21 @@ class RestaurantDbSource {
     return responseJson.restaurants;
   }
 
-  // static async upcomingMovies() {
-  //   const response = await fetch(API_ENDPOINT.UPCOMING);
-  //   const responseJson = await response.json();
-  //   return responseJson.results;
-  // }
-
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     return response.json();
+  }
+
+  static async postReview(review) {
+    const response = await fetch(API_ENDPOINT.ADDREVIEW, {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': '12345',
+      },
+      body: JSON.stringify(review),
+    });
+    return response;
   }
 }
 

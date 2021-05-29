@@ -5,7 +5,7 @@ const AllRestaurants = {
   async render() {
     return `
       <div class="content">
-        <h2 class="content__heading">Daftar Restoran</h2>
+        <h2 tabindex="0" class="content__heading"><i class="fa fa-shopping-bag"></i>  Daftar Restoran</h2>
         <div id="restaurants" class="restaurants">
 
         </div>

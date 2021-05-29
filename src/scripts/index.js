@@ -6,8 +6,6 @@ import swRegister from './utils/sw-register';
 // import WebSocketInitiator from './utils/websocket-initiator';
 // import CONFIG from './globals/config';
 
-require('webpack-icons-installer/font-awesome');
-
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
   drawer: document.querySelector('#navigationDrawer'),

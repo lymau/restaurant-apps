@@ -12,6 +12,16 @@ body {
 }
 
 /*
+  Tombol
+*/
+
+.tombol {
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/*
   AppBar
 */
 
@@ -48,7 +58,7 @@ body {
 .app-bar .app-bar__brand h1 {
   color: #ff6701;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 24px;
   user-select: none;
 }
 
@@ -71,7 +81,7 @@ body {
   display: inline-block;
   text-decoration: none;
   color: black;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 5px;
   width: 100%;
 }
@@ -127,6 +137,7 @@ main {
 
 .content .content__heading {
   font-weight: normal;
+  text-align: center;
 }
 
 /*
@@ -157,6 +168,9 @@ main {
 
 .restaurant-item .restaurant-item__header .restaurant-item__header__poster {
   width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .restaurant-item .restaurant-item__header .restaurant-item__header__rating {
@@ -177,11 +191,13 @@ main {
 }
 
 .restaurant-item .restaurant-item__content {
-  padding: 16px;
+  padding: 16px 32px 32px 32px;
 }
 
 .restaurant-item .restaurant-item__content h3 {
   margin: 0 0 10px 0;
+  padding: 8px 0;
+  font-size: 24px;
 }
 
 .restaurant-item .restaurant-item__content h3 a {
@@ -189,11 +205,18 @@ main {
   text-decoration: none;
 }
 
+.restaurant-item .restaurant-item__content h4 {
+  padding: 0.25em;
+  background-color: #fbe6c2;
+  display: inline-block;
+  color: #212121;
+}
+
 .restaurant-item .restaurant-item__content p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-line-clamp: 3; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 
@@ -205,8 +228,6 @@ main {
   margin: 0 auto;
   width: 100%;
   max-width: 800px;
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 18px 16px;
 }
 
@@ -243,7 +264,7 @@ footer p {
 }
 
 footer p a {
-  color: #db0000;
+  color: #ff6701;
   text-decoration: none;
 }
 
@@ -256,7 +277,7 @@ footer p a {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  background-color: #db0000;
+  background-color: #ff6701;
   color: white;
   border: 0;
   border-radius: 50%;
@@ -266,4 +287,62 @@ footer p a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/*
+  Skip
+*/
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #f48b29;
+  color: white;
+  padding: 0.5em;
+  z-index: 100;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/*
+  Review Forms
+*/
+
+.review-form {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border-radius: 8px;
+  padding: 1.2em;
+  margin-top: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input#comment {
+  background-color: #f48b29;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.review-form button {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }

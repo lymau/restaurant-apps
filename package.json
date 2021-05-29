@@ -30,7 +30,6 @@
   "dependencies": {
     "idb": "^5.0.4",
     "regenerator-runtime": "^0.13.5",
-    "serviceworker-webpack-plugin": "^1.0.1",
-    "webpack-icons-installer": "^2.0.0"
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
