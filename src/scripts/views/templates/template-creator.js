@@ -1,5 +1,66 @@
 import CONFIG from '../../globals/config';
 
+const createAboutTemplate = () => {
+  const aboutHTML = `<div class="content">
+  <div id="about" class="restaurant">
+    <div tabindex="0" class="review-form">
+      <h2 style="text-align: center">
+        <i class="fa fa-user"></i> Tentang Saya
+      </h2>
+      <ul>
+        <li>Nama : Nur Sabilly</li>
+        <li>Profesi : Mahasiswa dan Freelancer Graphic Designer</li>
+        <li>
+          Minat : Machine Learning, Computer Vision, Graphic Design, Web
+          Development
+        </li>
+      </ul>
+      <p>
+        Fokus utama saya saat ini adalah belajar dan terus belajar. Lebih
+        spesifik lagi, saya sedang mempelajari lebih dalam tentang machine
+        learning dan computer vision karena atas berkat rahmat Allah yang
+        MahaKuasa, saya dan tim saya mendapatkan bantuan dana penelitian
+        untuk kegiatan PKM tahun 2021 ini. Tim kami merencanakan pembuatan
+        sebuah model machine learning yang dapat diterapkan dan
+        bermanfaat. Semoga tim kami dapat memberikan yang terbaik untuk
+        Indonesia dan dapat melanjutkan penelitian ini hingga ke jenjang
+        berikutnya.
+      </p>
+      <div class="social-buttons">
+        <a
+          href="https://id.linkedin.com/in/nur-sabilly"
+          class="social-buttons__button social-button social-button--linkedin"
+          aria-label="LinkedIn"
+        >
+          <span class="social-button__inner">
+            <i class="fa fa-linkedin"></i>
+          </span>
+        </a>
+        <a
+          href="https://github.com/maififteen"
+          class="social-buttons__button social-button social-button--github"
+          aria-label="GitHub"
+        >
+          <span class="social-button__inner">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+        <a
+          href="https://www.instagram.com/nursabilly"
+          class="social-buttons__button social-button social-button--instagram"
+          aria-label="Instagram"
+        >
+          <span class="social-button__inner">
+            <i class="fa fa-instagram"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>`;
+  return aboutHTML;
+};
+
 const createLoadingAnimation = () => {
   const loadingHTML = `<div class="sk-folding-cube">
  <div class="sk-cube1 sk-cube"></div>
@@ -85,7 +146,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         </div>
     </div>
     <div class="restaurant-item__content">
-        <h3><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+        <h3><a class="tombol" href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
         <h4>${restaurant.city}</h4>
         <p>${restaurant.description}</p>
     </div>
@@ -105,6 +166,7 @@ const createLikedButtonTemplate = () => `
 `;
 
 export {
+  createAboutTemplate,
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
