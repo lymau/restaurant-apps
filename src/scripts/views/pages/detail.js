@@ -31,6 +31,8 @@ const Detail = {
       };
 
       await RestaurantDbSource.postReview(review);
+
+      return window.location.reload();
     });
 
     LikeButtonInitiator.init({

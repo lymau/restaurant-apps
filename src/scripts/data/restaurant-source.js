@@ -15,7 +15,7 @@ class RestaurantDbSource {
   static async postReview(review) {
     const response = await fetch(API_ENDPOINT.ADDREVIEW, {
       method: 'POST',
-      header: {
+      headers: {
         'Content-Type': 'application/json',
         'X-Auth-Token': '12345',
       },
