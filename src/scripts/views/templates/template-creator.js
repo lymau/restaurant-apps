@@ -29,7 +29,7 @@ const createAboutTemplate = () => {
       <div class="social-buttons">
         <a
           href="https://id.linkedin.com/in/nur-sabilly"
-          class="social-buttons__button social-button social-button--linkedin"
+          target="_blank" class="social-buttons__button social-button social-button--linkedin"
           aria-label="LinkedIn"
         >
           <span class="social-button__inner">
@@ -38,7 +38,7 @@ const createAboutTemplate = () => {
         </a>
         <a
           href="https://github.com/maififteen"
-          class="social-buttons__button social-button social-button--github"
+          target="_blank" class="social-buttons__button social-button social-button--github"
           aria-label="GitHub"
         >
           <span class="social-button__inner">
@@ -47,7 +47,7 @@ const createAboutTemplate = () => {
         </a>
         <a
           href="https://www.instagram.com/nursabilly"
-          class="social-buttons__button social-button social-button--instagram"
+          target="_blank" class="social-buttons__button social-button social-button--instagram"
           aria-label="Instagram"
         >
           <span class="social-button__inner">
