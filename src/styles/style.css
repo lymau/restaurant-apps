@@ -96,9 +96,30 @@ body {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../public/images/hero-image_3.jpg");
+  /* background-image: url("../../dist/images/hero-image_3-small.jpg"); */
   background-position: center;
   background-color: green;
+}
+
+.banner-hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  max-height: 800px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-padding-before: 96px;
+  padding-block-start: 96px;
+}
+
+.banner-hero .background-banner {
+  position: absolute;
+  top: 0;
+  left: var(--positionleft, 0);
+  z-index: 1;
+  width: var(--widthBanner, 100vw);
+  height: 100%;
 }
 
 .hero__inner {
@@ -221,7 +242,7 @@ main {
 }
 
 /*
-  Movie
+  Restaurant
 */
 
 .restaurant {

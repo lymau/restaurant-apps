@@ -1,4 +1,6 @@
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createAboutTemplate = () => {
   const aboutHTML = `<div class="content">
@@ -126,41 +128,47 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h4>Alamat</h4>
     <p>${restaurant.address}</p>
     <h4>Kategori</h4><ul>${createListsTemplate(restaurant, 'category')
-}</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
+  }</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
 <h4>Drinks</h4><ul>${createListsTemplate(restaurant, 'drink')}</ul>
 <h4>Rating</h4>
     <p>⭐️ ${restaurant.rating}</p>
   </div >
   <div tabindex="0" class="restaurant__overview">
     <h3><i class="fa fa-comment"></i>  Customer Reviews</h3>${createReviewTemplate(restaurant)
-}</div>${createCustomerReviewForm()}
+  }</div>${createCustomerReviewForm()}
 `;
 
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
-      <img tabindex="0" class="restaurant-item__header__poster" alt="${restaurant.name}"
+      <img tabindex="0" class="restaurant-item__header__poster lazyload" alt="${restaurant.name}"
         src="${restaurant.pictureId ? `${CONFIG.BASE_IMAGE_URL}large/${restaurant.pictureId}` : 'https://picsum.photos/id/666/800/450?grayscale'}">
         <div class="restaurant-item__header__rating">
           <p>⭐️<span class="restaurant-item__header__rating__score">${restaurant.rating}</span></p>
         </div>
     </div>
       <div class="restaurant-item__content">
-        <h3><a class="tombol" href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+        <h3 class="restaurant__name"><a class="tombol" href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
         <h4>${restaurant.city}</h4>
         <p>${restaurant.description}</p>
       </div>
     </div>
 `;
 
+const createEmptyLikedRestaurantsTemplate = () => `
+  <div class="restaurant-item__not__found">
+    <p>Tidak ada restoran favorit untuk ditampilkan</p>
+  </div>
+`;
+
 const createLikeButtonTemplate = () => `
-  <button aria - label="sukai restoran ini" id = "likeButton" class="like">
+  <button aria-label="sukai restoran ini" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </ >
   `;
 
 const createLikedButtonTemplate = () => `
-  <button aria - label="tidak sukai restoran ini" id = "likeButton" class="like">
+  <button aria-label="tidak sukai restoran ini" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </>
   `;
@@ -169,6 +177,7 @@ export {
   createAboutTemplate,
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
+  createEmptyLikedRestaurantsTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
   createLoadingAnimation,
