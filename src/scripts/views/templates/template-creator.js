@@ -128,21 +128,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h4>Alamat</h4>
     <p>${restaurant.address}</p>
     <h4>Kategori</h4><ul>${createListsTemplate(restaurant, 'category')
-  }</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
+}</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
 <h4>Drinks</h4><ul>${createListsTemplate(restaurant, 'drink')}</ul>
 <h4>Rating</h4>
     <p>⭐️ ${restaurant.rating}</p>
   </div >
   <div tabindex="0" class="restaurant__overview">
     <h3><i class="fa fa-comment"></i>  Customer Reviews</h3>${createReviewTemplate(restaurant)
-  }</div>${createCustomerReviewForm()}
+}</div>${createCustomerReviewForm()}
 `;
 
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
       <img tabindex="0" class="restaurant-item__header__poster lazyload" alt="${restaurant.name}"
-        src="${restaurant.pictureId ? `${CONFIG.BASE_IMAGE_URL}large/${restaurant.pictureId}` : 'https://picsum.photos/id/666/800/450?grayscale'}">
+        data-src="${restaurant.pictureId ? `${CONFIG.BASE_IMAGE_URL}large/${restaurant.pictureId}` : 'https://picsum.photos/id/666/800/450?grayscale'}">
         <div class="restaurant-item__header__rating">
           <p>⭐️<span class="restaurant-item__header__rating__score">${restaurant.rating}</span></p>
         </div>

@@ -5,7 +5,7 @@
     "node": true,
     "jasmine": true
   },
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "plugin:codeceptjs/recommended"],
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module"
@@ -19,5 +19,5 @@
     "no-prototype-builtins": 0,
     "import/prefer-default-export": 0
   },
-  "plugins": ["jasmine"]
+  "plugins": ["jasmine", "codeceptjs"]
 }
