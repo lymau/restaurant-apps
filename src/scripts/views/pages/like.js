@@ -16,7 +16,7 @@ const Like = {
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
-    if (restaurants.length === 0){
+    if (restaurants.length === 0) {
       restaurantsContainer.innerHTML += createEmptyLikedRestaurantsTemplate();
     }
     restaurants.forEach((restaurant) => {

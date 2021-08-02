@@ -128,14 +128,14 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h4>Alamat</h4>
     <p>${restaurant.address}</p>
     <h4>Kategori</h4><ul>${createListsTemplate(restaurant, 'category')
-}</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
+  }</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
 <h4>Drinks</h4><ul>${createListsTemplate(restaurant, 'drink')}</ul>
 <h4>Rating</h4>
     <p>⭐️ ${restaurant.rating}</p>
   </div >
   <div tabindex="0" class="restaurant__overview">
     <h3><i class="fa fa-comment"></i>  Customer Reviews</h3>${createReviewTemplate(restaurant)
-}</div>${createCustomerReviewForm()}
+  }</div>${createCustomerReviewForm()}
 `;
 
 const createRestaurantItemTemplate = (restaurant) => `

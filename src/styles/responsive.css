@@ -4,7 +4,7 @@
   }
 
   .hero {
-    background-image: url('../../dist/images/hero-image_3-small.jpg');
+    background-image: url('../public/images/hero-image_3-small.jpg');
   }
 }
 
