@@ -78,9 +78,9 @@ const createCustomerReviewForm = () => {
   <h3><i class="fa fa-comment-o"></i>  Berikan Komentar</h3>
   <form id="reviewForm">
   <label for="name">Nama :</label><br>
-  <input type="text" id="name" name="name" placeholder="Nama Anda" required><br>
+  <input class="tombol" type="text" id="name" name="name" placeholder="Nama Anda" required><br>
   <label for="review">Review :</label><br>
-  <textarea id="review" name="review" placeholder="Review Anda" required></textarea>
+  <textarea class="tombol" id="review" name="review" placeholder="Review Anda" required></textarea>
   <input type="button" id="comment" name="comment" value="Comment">
   </form>
   </div>`;
@@ -125,17 +125,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <img tabindex="0" class="restaurant__poster" src="${`${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}`}" alt="${restaurant.name}" />
   <div tabindex="0" class="restaurant__info">
   <h3><i class="fa fa-info-circle"></i>  Information</h3>
-    <h4>Alamat</h4>
+  <h4>Deskripsi</h4>
+  <p>${restaurant.description}</p>  
+  <h4>Alamat</h4>
     <p>${restaurant.address}</p>
+    <h4>Kota</h4>
+    <p>${restaurant.city}</p>
     <h4>Kategori</h4><ul>${createListsTemplate(restaurant, 'category')
-  }</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
+}</ul><h4>Foods</h4><ul>${createListsTemplate(restaurant, 'food')}</ul>
 <h4>Drinks</h4><ul>${createListsTemplate(restaurant, 'drink')}</ul>
 <h4>Rating</h4>
     <p>⭐️ ${restaurant.rating}</p>
   </div >
   <div tabindex="0" class="restaurant__overview">
     <h3><i class="fa fa-comment"></i>  Customer Reviews</h3>${createReviewTemplate(restaurant)
-  }</div>${createCustomerReviewForm()}
+}</div>${createCustomerReviewForm()}
 `;
 
 const createRestaurantItemTemplate = (restaurant) => `
